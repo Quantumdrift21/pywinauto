@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Knowledge Constellation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <div class="logo">✶</div>
+        <div>
+          <h1>Knowledge Constellation</h1>
+          <p>Spatial storytelling for your ideas.</p>
+        </div>
+      </div>
+      <button id="expandAll" class="pill">Expand All</button>
+    </header>
+
+    <main>
+      <section class="canvas-wrapper">
+        <div id="scene"></div>
+        <div class="hud">
+          <p><strong>Navigate</strong>: drag to orbit • scroll to zoom • shift + drag to pan</p>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-section" id="selection">
+          <h2>Selection</h2>
+          <div class="selection-card" id="selectionCard">
+            <h3 id="selectedTitle">Select a node</h3>
+            <p id="selectedDescription">Click a node to explore its knowledge capsule.</p>
+            <ul id="selectedMeta"></ul>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2>Create</h2>
+          <form id="createForm">
+            <label>
+              Parent Node
+              <select id="parentSelect"></select>
+            </label>
+            <label>
+              Title
+              <input type="text" id="titleInput" required placeholder="e.g. Interaction Design" />
+            </label>
+            <label>
+              Description
+              <textarea id="descriptionInput" rows="3" placeholder="Why does this matter?" ></textarea>
+            </label>
+            <label>
+              Tags
+              <input type="text" id="tagsInput" placeholder="comma separated" />
+            </label>
+            <button type="submit" class="pill primary">Add Knowledge</button>
+          </form>
+        </div>
+
+        <div class="panel-section">
+          <h2>Notes</h2>
+          <textarea id="notesInput" rows="6" placeholder="Capture insights about the selected node..."></textarea>
+          <button id="saveNotes" class="pill">Save Notes</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Crafted with Three.js. Data persists locally in your browser.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
